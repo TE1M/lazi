@@ -1,4 +1,4 @@
-zi 🦥
+lazi 🦥
 *The lazy pentester's automated Infrastructure-as-Code (IaC) tool.*
 
 **Lazi** is a high-performance, declarative configuration engine written in Rust. It automates the complete lifecycle of Offensive Security virtual machines. By parsing a single YAML recipe, Lazi orchestrates local hypervisors (VirtualBox) to instantly clone, configure, and boot a headless Kali Linux VM, followed by establishing an SSH tunnel to inject custom toolchains and dotfiles.
