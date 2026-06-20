@@ -1,0 +1,49 @@
+name: "lazi-testing2"
+
+vm:
+  cpus: 4
+  ram_mb: 8192
+
+# User Configuration
+
+user:
+  username: "te1m"
+  shell: "/bin/zsh"
+  # You will be prompted for the password you wish to use.
+
+# Packages
+
+packages:
+  apt:
+    - nmap
+    - ffuf
+    - hashcat
+    - python3-impacket
+    - bloodhound
+    - neo4j
+    - john
+    - seclists
+    - sqlmap
+    - tmux
+    - flameshot
+  pipx:
+    - netexec
+    - bloodyAD
+
+# Misc Configurations
+
+files:
+  - path: "{{HOME}}/.tmux.conf"
+    content: |
+      set -g mouse on
+      set -g default-terminal "screen-256color"
+      set -g history-limit 10000
+
+# Custom Binaries
+
+scripts:
+  - "wget -qO /tmp/ligolo.tar.gz https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.3/ligolo-ng_agent_0.8.3_linux_amd64.tar.gz"
+  - "sudo tar -xzf /tmp/ligolo.tar.gz -C /usr/local/bin/ligolo-proxy"
+
+  - "wget -qO /tmp/caido.tar.gz https://caido.download/releases/v0.57.0/caido-desktop-v0.57.0-linux-x86_64.tar.gz"
+  - "sudo tar -xzf /tmp/caido.tar.gz -C /usr/local/bin/caido"
